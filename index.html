@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>杭州第七中学校歌 · 双曲播放页</title>
+<meta name="description" content="第一首：杭州第七中学校歌（司凤版）；第二首：《东南苦行山》摇滚版。">
+<meta name="theme-color" content="#0d0a05">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="杭州第七中学校歌 · 双曲播放页">
+<meta property="og:description" content="第一首：杭州第七中学校歌（司凤版）；第二首：《东南苦行山》摇滚版。">
+<meta property="og:image" content="assets/cover1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/cover1-400.jpg">
+<link rel="preload" as="image" href="assets/cover1-900.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="gold">
+
+<!-- ===== 背景层 ===== -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__img" id="bgImg"></div>
+  <div class="bg__veil"></div>
+</div>
+
+<div class="sparks" aria-hidden="true"></div>
+
+<!-- ===== 内容 ===== -->
+<main class="stage">
+
+  <header class="head">
+    <p class="eyebrow" id="eyebrow">SONG 01 / 02</p>
+    <h1 class="title">
+      <span class="title__cn" id="titleCn">杭州第七中学校歌</span>
+      <span class="title__en" id="titleEn">司凤版</span>
+    </h1>
+    <p class="sub" id="sub">点一下封面，开唱。</p>
+  </header>
+
+  <section class="player" aria-label="播放器">
+
+    <div class="disc" id="disc">
+      <img class="disc__cover" id="discCover"
+           src="assets/cover1-900.jpg"
+           srcset="assets/cover1-400.jpg 400w, assets/cover1-900.jpg 900w, assets/cover1.jpg 1920w"
+           sizes="(max-width: 640px) 86vw, 380px"
+           alt="封面：杭州第七中学校歌 司凤版" draggable="false">
+      <div class="disc__ring" aria-hidden="true"></div>
+    </div>
+
+    <button class="play" id="play" type="button" aria-label="播放" aria-pressed="false">
+      <svg class="ico ico--play" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 5.2v13.6L19 12z"/>
+      </svg>
+      <svg class="ico ico--pause" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 5h3.6v14H7zm6.4 0H17v14h-3.6z"/>
+      </svg>
+    </button>
+
+    <div class="bar">
+      <span class="time" id="cur">0:00</span>
+      <div class="track" id="track" role="slider" tabindex="0"
+           aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track__fill" id="fill"></div>
+        <div class="track__dot" id="dot"></div>
+      </div>
+      <span class="time" id="dur">0:00</span>
+    </div>
+
+    <p class="hint" id="hint">点播放键开始</p>
+
+    <p class="fallback" id="fallback" hidden>
+      你的浏览器好像播不了这个文件，<a id="fallbackLink" href="assets/song1.mp4" download>点这里直接下载</a>。
+    </p>
+
+    <!-- ===== 播放列表 ===== -->
+    <ul class="list" id="list" aria-label="曲目列表">
+      <li>
+        <button class="list__item is-active" type="button" data-index="0" aria-current="true">
+          <span class="list__no">01</span>
+          <span class="list__thumb"><img src="assets/cover1-400.jpg" alt="" draggable="false"></span>
+          <span class="list__text">
+            <span class="list__name">杭州第七中学校歌</span>
+            <span class="list__meta">司凤版</span>
+          </span>
+          <span class="list__eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </li>
+      <li>
+        <button class="list__item" type="button" data-index="1">
+          <span class="list__no">02</span>
+          <span class="list__thumb"><img src="assets/cover2-400.jpg" alt="" draggable="false"></span>
+          <span class="list__text">
+            <span class="list__name">东南苦行山</span>
+            <span class="list__meta">摇滚版 · 牢蒋の小曲 Level 1</span>
+          </span>
+          <span class="list__eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </li>
+    </ul>
+
+    <div class="nav">
+      <button class="nav__btn" id="prev" type="button" aria-label="上一首">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h2.2v14H7zm3.6 7L18 5.4v13.2z"/></svg>
+      </button>
+      <label class="toggle" title="播完自动下一首">
+        <input type="checkbox" id="autonext" checked>
+        <span class="toggle__box" aria-hidden="true"></span>
+        <span>自动连播</span>
+      </label>
+      <button class="nav__btn" id="next" type="button" aria-label="下一首">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.8 12L7.8 5.4v13.2zM15 5h2.2v14H15z"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="wave" id="wave" aria-hidden="true" hidden>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </p>
+    <p class="credit">封面 &amp; 音乐：本地资源</p>
+  </footer>
+</main>
+
+<audio id="audio" src="assets/song1.mp4" preload="metadata"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
